@@ -27,13 +27,14 @@ jobs:
 
       - name: Commit generated dictionary when changed
         run: |
-          if git diff --quiet -- dictionary.md dictionary/; then
+          git add dictionary.md dictionary/
+
+          if git diff --cached --quiet; then
             echo "Generated dictionary files are already up to date."
             exit 0
           fi
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add dictionary.md dictionary/
           git commit -m "Build word dictionary"
           git push
