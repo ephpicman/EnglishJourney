@@ -1,10 +1,9 @@
-name: Build word dictionary
+name: Build English dictionary
 
 on:
   schedule:
     # 06:00 Iran time (UTC+03:30) every day.
     - cron: '30 2 * * *'
-  workflow_dispatch:
 
 permissions:
   contents: write
@@ -23,11 +22,11 @@ jobs:
           coverage: none
 
       - name: Render word dictionary
-        run: php scripts/word.php
+        run: php scripts/dictionary.php
 
       - name: Commit generated dictionary when changed
         run: |
-          git add dictionary.md dictionary/
+          git add dictionary.md dictionary/ phrasal_verbs/ collocations/ idioms/
 
           if git diff --cached --quiet; then
             echo "Generated dictionary files are already up to date."
@@ -36,5 +35,5 @@ jobs:
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Build word dictionary"
+          git commit -m "Build English dictionary"
           git push
