@@ -59,3 +59,18 @@ Before finishing:
 - Confirm all defensible types were evaluated independently and every applicable type has its own file.
 - Validate each JSON file and verify its exact schema against the matching template.
 - Report the phrases processed, classifications made, and repository paths created. Mention any phrase that needs clarification or could not be processed.
+
+## Branch, pull request, merge, and cleanup workflow
+
+For every issue processed through this workflow, make all changes on a dedicated branch and merge them into the repository's default branch. Do not commit the entry files directly to the default branch.
+
+1. Read the issue number from GitHub and create a new branch named exactly `issue-{issue number}` (for example, issue #12 uses branch `issue-12`), starting from the latest default branch.
+2. Check whether that branch already exists. If it exists, inspect it and its status before proceeding; never overwrite or repurpose an existing branch blindly. If it contains unmerged work or its purpose is unclear, stop and ask the user how to proceed.
+3. Create and validate all JSON files for the issue on that branch. Ensure every file change for the issue is committed to the branch.
+4. Open a pull request from `issue-{issue number}` into the repository's default branch. Describe the issue processed and summarise the entries/files added.
+5. Merge the pull request only after checking the proposed changes and confirming the JSON files and paths are correct. Use an available merge option that automatically deletes the head branch after merging whenever such an option is offered.
+6. If the merge operation does not offer automatic branch deletion, attempt to delete `issue-{issue number}` after the pull request has successfully merged, using an available GitHub branch/ref deletion action. Never delete the branch before a confirmed successful merge.
+7. If branch deletion is unavailable or fails, do not claim it was deleted. Report that cleanup remains outstanding and provide the branch name.
+8. Verify the pull request is merged and, where possible, verify that the issue branch has been deleted. In the final report, include the branch name, pull request link, merge status, and branch-cleanup status.
+
+Do not close an issue merely because its entry files were created; close it only when appropriate after the work is successfully merged, and follow any repository-specific policy.
