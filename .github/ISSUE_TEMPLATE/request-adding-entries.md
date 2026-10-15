@@ -1,27 +1,19 @@
 ---
 name: Request Adding Entries
-about: Request new English-learning entries by providing a list of phrases
-title: "Add entries: "
+about: Request new English-learning entries by listing phrases
+title: "Add entries"
 labels: ["data request"]
 assignees: []
 ---
 
-## Phrases to add
+## Phrases
 
-List the exact phrases you want added, one per line.
+Enter the phrases you want added in the text box below, one phrase per line. Keep each phrase exactly as you want it stored. You do not need to identify the entry type; it will be determined for you.
 
-- [ ] `phrase one`
-- [ ] `phrase two`
+```text
+Paste your phrases here, one per line
+```
 
-## Entry type
+## Optional context
 
-Choose the applicable type for all phrases in this request:
-
-- [ ] Collocations
-- [ ] Phrasal verbs
-- [ ] Words
-- [ ] Idioms
-
-## Notes (optional)
-
-Add context only if a phrase is ambiguous or needs a specific meaning.
+If any phrase has a specific meaning you want, mention it here. Otherwise, leave this section blank.
