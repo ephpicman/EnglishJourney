@@ -1,0 +1,142 @@
+{
+  "type": "word",
+  "word": "family",
+  "pronunciation": {
+    "uk": "/ˈfæməli/"
+  },
+  "tags": [
+    "people",
+    "relationships",
+    "home"
+  ],
+  "parts_of_speech": [
+    {
+      "part_of_speech": "noun",
+      "grammar": {
+        "countability": "countable",
+        "plural": "families"
+      },
+      "meanings": [
+        {
+          "meaning": "A group of people related to one another, usually through birth, marriage, or adoption.",
+          "grammar": {
+            "countability": "countable"
+          },
+          "examples": [
+            "Most of my family live in the north of England.",
+            "She comes from a large family with five children."
+          ],
+          "synonyms": [
+            "relatives",
+            "relations"
+          ],
+          "antonyms": [],
+          "collocations": [
+            "close family",
+            "extended family",
+            "large family",
+            "family member"
+          ],
+          "patterns": [
+            "family + singular or plural verb, depending on whether it is viewed as a unit or as individual people"
+          ],
+          "notes": [
+            "In British English, family can take a singular verb when the group is considered as a unit, or a plural verb when the members are emphasised."
+          ]
+        },
+        {
+          "meaning": "A person's parents and children, considered as a household or immediate family unit.",
+          "grammar": {
+            "countability": "countable"
+          },
+          "examples": [
+            "Their family has just moved to Bristol.",
+            "The whole family sat down to dinner."
+          ],
+          "synonyms": [
+            "household"
+          ],
+          "antonyms": [],
+          "collocations": [
+            "family home",
+            "family life",
+            "family dinner",
+            "start a family"
+          ],
+          "patterns": [
+            "a family",
+            "the whole family",
+            "family of + number"
+          ],
+          "notes": []
+        },
+        {
+          "meaning": "A group of people or things that share a common feature or origin.",
+          "grammar": {
+            "countability": "countable"
+          },
+          "examples": [
+            "These languages belong to the same language family.",
+            "The company sells a family of related products."
+          ],
+          "synonyms": [
+            "group",
+            "category"
+          ],
+          "antonyms": [],
+          "collocations": [
+            "language family",
+            "product family"
+          ],
+          "patterns": [
+            "a family of + plural noun"
+          ],
+          "notes": [
+            "This sense is used in contexts such as linguistics, science, and business."
+          ]
+        }
+      ],
+      "notes": []
+    },
+    {
+      "part_of_speech": "adjective",
+      "grammar": {
+        "usage": "attributive; used before a noun"
+      },
+      "meanings": [
+        {
+          "meaning": "Designed for or suitable for families, including children.",
+          "grammar": {},
+          "examples": [
+            "We booked a family room at the hotel.",
+            "It's a family-friendly restaurant with a children's menu."
+          ],
+          "synonyms": [],
+          "antonyms": [],
+          "collocations": [
+            "family holiday",
+            "family business",
+            "family-friendly",
+            "family car"
+          ],
+          "patterns": [
+            "family + noun"
+          ],
+          "notes": [
+            "In this use, family commonly modifies another noun."
+          ]
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "related": [
+    "relative",
+    "household",
+    "parent",
+    "child"
+  ],
+  "notes": [
+    "The word can refer to relatives beyond the people living in one household."
+  ]
+}
