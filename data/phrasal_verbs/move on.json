@@ -1,0 +1,102 @@
+{
+  "type": "phrasal_verb",
+  "phrase": "move on",
+  "pronunciation": {
+    "uk": "/ˌmuːv ˈɒn/"
+  },
+  "tags": [
+    "intransitive",
+    "progress",
+    "change"
+  ],
+  "meanings": [
+    {
+      "meaning": "To proceed to the next activity, subject, stage, or point.",
+      "patterns": [
+        {
+          "structure": "move on to + noun / gerund",
+          "examples": [
+            "After discussing the budget, we moved on to the next item on the agenda.",
+            "She finished the introduction and moved on to explaining the results."
+          ],
+          "notes": [
+            "In this pattern, to is a preposition and is followed by a noun or gerund."
+          ]
+        },
+        {
+          "structure": "move on",
+          "examples": [
+            "We've spent enough time on this question; let's move on."
+          ],
+          "notes": [
+            "Used without an expressed complement when the next activity or topic is clear from context."
+          ]
+        }
+      ],
+      "synonyms": [
+        "proceed",
+        "continue"
+      ],
+      "antonyms": [
+        "stop",
+        "remain"
+      ],
+      "notes": []
+    },
+    {
+      "meaning": "To accept that a situation or experience has ended and continue with one's life, rather than remaining emotionally focused on it.",
+      "patterns": [
+        {
+          "structure": "move on from + noun",
+          "examples": [
+            "It took him months to move on from the breakup.",
+            "She's ready to move on from that difficult period in her life."
+          ],
+          "notes": [
+            "Often used about relationships, disappointments, or difficult experiences."
+          ]
+        }
+      ],
+      "synonyms": [
+        "move forward",
+        "get over"
+      ],
+      "antonyms": [
+        "dwell on"
+      ],
+      "notes": []
+    },
+    {
+      "meaning": "To leave a place, job, or role and progress to something different.",
+      "patterns": [
+        {
+          "structure": "move on to + noun",
+          "examples": [
+            "After three years in the role, he moved on to a job in education.",
+            "The band moved on to a larger venue for its next tour."
+          ],
+          "notes": [
+            "The next destination or stage may be stated with to."
+          ]
+        }
+      ],
+      "synonyms": [
+        "progress",
+        "advance"
+      ],
+      "antonyms": [
+        "stay",
+        "remain"
+      ],
+      "notes": []
+    }
+  ],
+  "related": [
+    "move forward",
+    "get over",
+    "carry on"
+  ],
+  "notes": [
+    "Move on is a phrasal verb. Its figurative uses are established senses of the verb rather than a separate, fixed idiom entry for this request."
+  ]
+}
