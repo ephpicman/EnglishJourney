@@ -5,14 +5,14 @@
 When inspecting issues in the `ephpicman/EnglishJourney` repository, determine the workflow from the issue's current labels:
 
 - If the labels include the exact label `request-adding-entries`, use the phrase-entry workflow described below.
-- If the labels include the exact label `grammar-entry`, use the grammar-entry workflow described below.
+- If the labels include the exact label `request-grammar-entry`, use the grammar-entry workflow described below.
 - Do not rely on conversation history to identify the request type. Read the issue's current labels and body.
 - If neither required label is present, do not apply either workflow unless the user explicitly instructs you to.
 - If an issue has both labels, do not guess which workflow takes priority. Ask the user to clarify.
 
 ## Grammar-entry requests
 
-Process an issue as a grammar-entry request only when its current labels include the exact label `grammar-entry`.
+Process an issue as a grammar-entry request only when its current labels include the exact label `request-grammar-entry`.
 
 ### Read the request and required instructions
 
