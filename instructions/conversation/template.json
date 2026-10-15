@@ -1,0 +1,28 @@
+{
+  "type": "conversation",
+  "title": "",
+  "tags": [],
+  "context": {
+    "situation": "",
+    "speakers": [
+      {
+        "name": "",
+        "age": null,
+        "gender": ""
+      }
+    ],
+    "purpose": ""
+  },
+  "dialogue": [
+    {
+      "speaker": "",
+      "text": "",
+      "pronunciation": {
+        "uk": ""
+      },
+      "notes": []
+    }
+  ],
+  "related": [],
+  "notes": []
+}

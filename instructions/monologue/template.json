@@ -1,0 +1,26 @@
+{
+  "type": "monologue",
+  "title": "",
+  "tags": [],
+  "context": {
+    "situation": "",
+    "purpose": "",
+    "audience": ""
+  },
+  "speaker": {
+    "name": "",
+    "age": null,
+    "gender": ""
+  },
+  "sentences": [
+    {
+      "text": "",
+      "pronunciation": {
+        "uk": ""
+      },
+      "notes": []
+    }
+  ],
+  "related": [],
+  "notes": []
+}
