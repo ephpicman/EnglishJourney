@@ -1,6 +1,7 @@
 name: Build English dictionary
 
 on:
+  workflow_dispatch:
   schedule:
     # 06:00 Iran time (UTC+03:30) every day.
     - cron: '30 2 * * *'
