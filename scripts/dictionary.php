@@ -451,7 +451,7 @@ foreach ($collections as $collectionKey => $collection) {
             'label' => $collection['label'],
             'term' => $entry[$termKey],
             'path' => $relativePath,
-            'sort' => mb_strtolower($entry[$termKey], 'UTF-8'),
+            'sort' => strtolower($entry[$termKey]),
         ];
         $renderedCounts[$collectionKey]++;
     }
@@ -503,7 +503,7 @@ $index = [
 ];
 
 foreach ($allEntries as $entry) {
-    $link = rawurlencode($entry['path']);
+    $link = implode('/', array_map('rawurlencode', explode('/', $entry['path'])));
     $index[] = '| ' . $entry['label'] . ' | [' . markdownText($entry['term']) . '](' . $link . ') |';
 }
 
