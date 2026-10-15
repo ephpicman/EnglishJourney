@@ -73,6 +73,29 @@ usort($words, static function (array $left, array $right): int {
 });
 
 /**
+ * Write a generated file only when its contents differ.
+ *
+ * Avoids unnecessary disk writes while preserving unchanged files and mtimes.
+ */
+function writeIfChanged(string $path, string $content): bool
+{
+    if (is_file($path)) {
+        $existingContent = file_get_contents($path);
+
+        if ($existingContent === false) {
+            fwrite(STDERR, "Could not read existing file: {$path}\n");
+            return false;
+        }
+
+        if ($existingContent === $content) {
+            return true;
+        }
+    }
+
+    return file_put_contents($path, $content, LOCK_EX) !== false;
+}
+
+/**
  * Keep JSON content safe to embed in a Markdown line.
  */
 function markdownText(string $value): string
@@ -295,7 +318,7 @@ foreach ($words as $word) {
 
     $content = renderWord($word, $generatedMarker);
 
-    if (file_put_contents($outputPath, $content, LOCK_EX) === false) {
+    if (!writeIfChanged($outputPath, $content)) {
         fwrite(STDERR, "Could not write dictionary page: {$outputPath}\n");
         exit(1);
     }
@@ -306,7 +329,7 @@ foreach ($words as $word) {
 
 $indexContent = rtrim(implode("\n", $index)) . "\n";
 
-if (file_put_contents($indexFile, $indexContent, LOCK_EX) === false) {
+if (!writeIfChanged($indexFile, $indexContent)) {
     fwrite(STDERR, "Could not write dictionary index: {$indexFile}\n");
     exit(1);
 }
