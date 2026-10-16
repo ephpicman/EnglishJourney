@@ -1,0 +1,33 @@
+{
+  "type": "letter",
+  "title": "[Concise descriptive title]",
+  "task": {
+    "prompt": "[Exact IELTS General Training Writing Task 1 question, including all bullet points]",
+    "tone": "[Formal, semi-formal, or informal]"
+  },
+  "response": {
+    "salutation": "[Appropriate greeting]",
+    "paragraphs": [
+      "[Opening paragraph stating the purpose]",
+      "[Body paragraph addressing one or more task points]",
+      "[Body paragraph addressing remaining task points]",
+      "[Closing paragraph, if appropriate]"
+    ],
+    "sign_off": "[Appropriate sign-off and name]",
+    "word_count": 0
+  },
+  "writing_notes": [
+    {
+      "point": "[Important writing decision or technique]",
+      "explanation": "[Why it works and how it addresses the bullet points]"
+    }
+  ],
+  "key_language": [
+    {
+      "expression": "[Useful expression from the letter]",
+      "meaning_or_function": "[Meaning, nuance, or function in context]"
+    }
+  ],
+  "related": [],
+  "notes": []
+}
