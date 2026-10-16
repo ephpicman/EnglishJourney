@@ -360,27 +360,25 @@
       ]
     },
     {
-      "description": "Use a negative question to check an expectation, express surprise or invite confirmation.",
+      "description": "Use a negative question to check an expectation, express surprise or invite confirmation when be is the main verb.",
       "examples": [
-        {
-          "text": "Aren't you coming to the presentation?",
-          "pronunciation": {
-            "uk": "/ɑːnt juː ˈkʌmɪŋ tə ðə ˌprezənˈteɪʃən/"
-          },
-          "notes": [
-            "Here coming is a participle in a progressive construction, so this example is not a main-verb-be example."
-          ]
-        },
         {
           "text": "Wasn't the restaurant much cheaper last time?",
           "pronunciation": {
             "uk": "/ˈwɒzənt ðə ˈrestrɒnt mʌtʃ ˈtʃiːpə lɑːst taɪm/"
           },
           "notes": []
+        },
+        {
+          "text": "Aren't these figures inconsistent with the earlier report?",
+          "pronunciation": {
+            "uk": "/ɑːnt ðiːz ˈfɪɡəz ˌɪnkənˈsɪstənt wɪð ði ˈɜːliə rɪˈpɔːt/"
+          },
+          "notes": []
         }
       ],
       "notes": [
-        "The first example illustrates the pragmatic function of negative questions but uses auxiliary be; the second illustrates main-verb be directly."
+        "The speaker's stance depends on context and intonation; the form can invite confirmation without necessarily requiring a negative answer."
       ]
     },
     {
