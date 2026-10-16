@@ -1,0 +1,31 @@
+{
+  "type": "essay",
+  "title": "[Concise descriptive title]",
+  "task": {
+    "prompt": "[Exact IELTS Writing Task 2 question, including all instructions]",
+    "question_type": "[Opinion, discuss both views, advantages/disadvantages, problems/solutions, two-part, or other]"
+  },
+  "response": {
+    "paragraphs": [
+      "[Introduction paragraph]",
+      "[Body paragraph]",
+      "[Body paragraph]",
+      "[Conclusion paragraph]"
+    ],
+    "word_count": 0
+  },
+  "writing_notes": [
+    {
+      "point": "[Important writing decision or technique]",
+      "explanation": "[Why it works and how it answers the task]"
+    }
+  ],
+  "key_language": [
+    {
+      "expression": "[Useful expression from the answer]",
+      "meaning_or_function": "[Meaning, nuance, or function in context]"
+    }
+  ],
+  "related": [],
+  "notes": []
+}
