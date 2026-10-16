@@ -1,4 +1,4 @@
-name: Build dictionary, readings, essays, and letters
+name: Build dictionary, readings, essays, letters, and monologues
 
 on:
   workflow_dispatch:
@@ -22,7 +22,7 @@ jobs:
           php-version: '8.3'
           coverage: none
 
-      - name: Render dictionary entries and writing practice
+      - name: Render dictionary entries and learning materials
         run: php scripts/dictionary.php
 
       - name: Commit generated Markdown when changed
@@ -30,11 +30,11 @@ jobs:
           git add -A
 
           if git diff --cached --quiet; then
-            echo "Generated dictionary, reading, essay, and letter Markdown files are already up to date."
+            echo "Generated dictionary, reading, essay, letter, and monologue Markdown files are already up to date."
             exit 0
           fi
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Build dictionary and writing practice pages"
+          git commit -m "Build dictionary and learning material pages"
           git push
