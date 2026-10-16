@@ -1,0 +1,38 @@
+name: Request Conversation
+description: Request an English conversation for listening and speaking practice.
+title: "[Conversation] "
+labels:
+  - request-conversation
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Request one natural English conversation between two or more speakers.
+        Professional topics must be specifically related to PHP, web development, software engineering, or IT.
+  - type: input
+    id: topic
+    attributes:
+      label: Topic
+      description: What should the speakers discuss or do?
+      placeholder: "For example, explaining a bug during a PHP code review"
+    validations:
+      required: true
+  - type: dropdown
+    id: context
+    attributes:
+      label: Context
+      description: Select the setting and style of the conversation.
+      options:
+        - "Everyday life (ielts-listening-part-2)"
+        - "Academic (ielts-listening-part-4)"
+        - "Professional (PHP, web development, and IT)"
+    validations:
+      required: true
+  - type: textarea
+    id: preferences
+    attributes:
+      label: Additional preferences (optional)
+      description: Mention a target level, useful vocabulary, speaker roles, or a specific angle. For professional topics, keep the subject within PHP, web, software engineering, or IT.
+      placeholder: Optional
+    validations:
+      required: false
