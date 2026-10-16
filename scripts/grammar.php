@@ -290,8 +290,8 @@ function renderEntry(array $entry, string $generatedMarker): string
     return rtrim(implode("\n", $lines)) . "\n";
 }
 
-if (!is_dir($grammarRoot)) {
-    fwrite(STDERR, "Grammar source directory does not exist: {$grammarRoot}\n");
+if (!is_dir($dataGrammarRoot)) {
+    fwrite(STDERR, "Grammar source directory does not exist: {$dataGrammarRoot}\n");
     exit(1);
 }
 
