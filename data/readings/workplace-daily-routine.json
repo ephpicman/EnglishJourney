@@ -1,0 +1,163 @@
+{
+  "type": "reading",
+  "title": "A Daily Routine at the Family Business",
+  "tags": [
+    "workplace",
+    "daily-routine",
+    "verb-be",
+    "phrasal-verb-move-on",
+    "family-business"
+  ],
+  "context": {
+    "topic": "A typical workday at a small family business",
+    "purpose": "Reinforce present forms of the main verb be, everyday uses of 'move on', and familiar family collocations such as 'family business' and 'family dinner' in a practical workplace context."
+  },
+  "paragraphs": [
+    {
+      "sentences": [
+        {
+          "text": "Every morning, Daniel arrives at the family business at nine o’clock.",
+          "pronunciation": {
+            "uk": ""
+          },
+          "notes": []
+        },
+        {
+          "text": "He is usually the first person in the office, so the room is quiet.",
+          "pronunciation": {
+            "uk": ""
+          },
+          "notes": [
+            "The present form 'is' describes Daniel's usual situation."
+          ]
+        },
+        {
+          "text": "His sister is responsible for customer emails, and their father is in charge of the shop.",
+          "pronunciation": {
+            "uk": ""
+          },
+          "notes": []
+        },
+        {
+          "text": "Before they start work, they are often busy planning the day.",
+          "pronunciation": {
+            "uk": ""
+          },
+          "notes": []
+        }
+      ],
+      "notes": []
+    },
+    {
+      "sentences": [
+        {
+          "text": "At ten, Daniel checks the orders and answers questions from customers.",
+          "pronunciation": {
+            "uk": ""
+          },
+          "notes": []
+        },
+        {
+          "text": "Sometimes a problem takes longer than expected, but he tries to stay calm.",
+          "pronunciation": {
+            "uk": ""
+          },
+          "notes": []
+        },
+        {
+          "text": "When one task is finished, he moves on to the next one.",
+          "pronunciation": {
+            "uk": ""
+          },
+          "notes": [
+            "'Move on to' means to proceed to another task or stage."
+          ]
+        },
+        {
+          "text": "His sister helps him when the office is especially busy.",
+          "pronunciation": {
+            "uk": ""
+          },
+          "notes": []
+        }
+      ],
+      "notes": []
+    },
+    {
+      "sentences": [
+        {
+          "text": "At lunch, the family usually eats together in the small kitchen.",
+          "pronunciation": {
+            "uk": ""
+          },
+          "notes": []
+        },
+        {
+          "text": "They talk about work, family life, and their plans for the weekend.",
+          "pronunciation": {
+            "uk": ""
+          },
+          "notes": []
+        },
+        {
+          "text": "After lunch, Daniel returns to his desk and finishes the urgent orders.",
+          "pronunciation": {
+            "uk": ""
+          },
+          "notes": []
+        },
+        {
+          "text": "If a customer is unhappy, he listens carefully and looks for a practical solution.",
+          "pronunciation": {
+            "uk": ""
+          },
+          "notes": []
+        }
+      ],
+      "notes": []
+    },
+    {
+      "sentences": [
+        {
+          "text": "At five o’clock, the shop is quieter and most of the work is complete.",
+          "pronunciation": {
+            "uk": ""
+          },
+          "notes": []
+        },
+        {
+          "text": "Daniel writes a short list for tomorrow before he leaves.",
+          "pronunciation": {
+            "uk": ""
+          },
+          "notes": []
+        },
+        {
+          "text": "In the evening, he is happy to move on from work and enjoy time at home.",
+          "pronunciation": {
+            "uk": ""
+          },
+          "notes": [
+            "Here, 'move on from work' means to stop focusing on work and turn to something else."
+          ]
+        },
+        {
+          "text": "Sometimes the family has dinner together, and Daniel feels ready for another day.",
+          "pronunciation": {
+            "uk": ""
+          },
+          "notes": []
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "related": [
+    "data/words/family.json",
+    "data/phrasal_verbs/move on.json",
+    "data/grammar/questions-negation/be-main-verb.json"
+  ],
+  "notes": [
+    "UK IPA fields are left empty rather than supplying unverified transcriptions."
+  ]
+}
