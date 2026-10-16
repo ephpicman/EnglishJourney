@@ -75,7 +75,11 @@ jobs:
             echo "The review-path comments are stable identifiers for a future workflow that updates review timestamps when this issue is closed."
             echo
             echo "<!-- review-items:start -->"
-            jq -r --arg repo "$GITHUB_REPOSITORY" '.[] | "- [ ] [\(.path)](https://github.com/\($repo)/blob/main/\(.path)) <!-- review-path: \(.path) -->"' "$REVIEW_ITEMS_FILE"
+            jq -r --arg repo "$GITHUB_REPOSITORY" '
+              .[] |
+              (.path | split("/") | map(@uri) | join("/")) as $urlpath |
+              "- [ ] [\(.path)](https://github.com/\($repo)/blob/main/\($urlpath)) <!-- review-path: \(.path) -->"
+            ' "$REVIEW_ITEMS_FILE"
             echo "<!-- review-items:end -->"
           } > "$RUNNER_TEMP/review-body.md"
 
