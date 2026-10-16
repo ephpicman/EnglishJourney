@@ -20,6 +20,7 @@ Use `instructions/phrasal_verb/template.json` as the authoritative schema.
 ## Research and accuracy
 - Fill every field meaningfully using reliable linguistic knowledge. Do not leave placeholder strings or empty placeholder objects when the information can reasonably be supplied.
 - Keep the exact input in `phrase`. Do not silently correct, reword, or replace it. If it is not actually a phrasal verb, do not misclassify it: use the closest defensible linguistic analysis in the existing schema and explain the distinction in `notes`, without changing the schema.
+- Do not use this entry to absorb a distinct prepositional-verb sense merely because the expression overlaps with a phrasal verb. Describe only defensible phrasal-verb uses here. If the same expression also has an independently useful prepositional-verb use or another lexical sense, assess that additional sense under the Word workflow and create a separate Word file only when it adds information not duplicated by this entry. There is no separate Prepositional Verb entry type.
 - Give standard British English pronunciation in `pronunciation.uk` using clear IPA. If you cannot establish it confidently, use an empty string rather than inventing one.
 - Add concise tags that accurately describe the expression.
 - In `meanings`, include the established, useful meanings of the supplied phrasal verb, not every rare or obsolete sense. Keep distinct meanings separate.
