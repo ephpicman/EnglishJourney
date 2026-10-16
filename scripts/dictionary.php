@@ -54,6 +54,20 @@ $collections = [
         'term_key' => 'title',
         'type' => 'reading',
     ],
+    'essays' => [
+        'label' => 'IELTS Essay',
+        'source' => $root . '/data/essays',
+        'output' => $root . '/essays',
+        'term_key' => 'title',
+        'type' => 'essay',
+    ],
+    'letters' => [
+        'label' => 'IELTS Letter',
+        'source' => $root . '/data/letters',
+        'output' => $root . '/letters',
+        'term_key' => 'title',
+        'type' => 'letter',
+    ],
 ];
 
 /**
@@ -145,6 +159,117 @@ function renderReading(array $reading, string $generatedMarker): string
 
     appendList($markdown, 'Related materials', $reading['related'] ?? []);
     appendList($markdown, 'Notes', $reading['notes'] ?? []);
+
+    return rtrim(implode("\n", $markdown)) . "\n";
+}
+
+/**
+ * Render an IELTS essay or letter, including its task prompt and learning notes.
+ */
+function renderWriting(array $entry, string $generatedMarker, string $type): string
+{
+    $task = is_array($entry['task'] ?? null) ? $entry['task'] : [];
+    $response = is_array($entry['response'] ?? null) ? $entry['response'] : [];
+    $paragraphs = is_array($response['paragraphs'] ?? null) ? $response['paragraphs'] : [];
+    $isLetter = $type === 'letter';
+    $markdown = [
+        '# ' . markdownText($entry['title']),
+        '',
+        $generatedMarker,
+        '',
+        '## IELTS task',
+        '',
+        '> ' . str_replace("\n", "\n> ", markdownText(is_string($task['prompt'] ?? null) ? $task['prompt'] : '')),
+        '',
+    ];
+
+    $taskDetailKey = $isLetter ? 'tone' : 'question_type';
+    $taskDetailLabel = $isLetter ? 'Tone' : 'Question type';
+    $taskDetail = $task[$taskDetailKey] ?? '';
+
+    if (is_string($taskDetail) && trim($taskDetail) !== '') {
+        $markdown[] = '**' . $taskDetailLabel . ':** ' . markdownText($taskDetail);
+        $markdown[] = '';
+    }
+
+    $markdown[] = $isLetter ? '## Model letter' : '## Model essay';
+    $markdown[] = '';
+
+    if ($isLetter) {
+        $salutation = $response['salutation'] ?? '';
+        if (is_string($salutation) && trim($salutation) !== '') {
+            $markdown[] = markdownText($salutation);
+            $markdown[] = '';
+        }
+    }
+
+    foreach ($paragraphs as $paragraph) {
+        if (is_string($paragraph) && trim($paragraph) !== '') {
+            $markdown[] = markdownText($paragraph);
+            $markdown[] = '';
+        }
+    }
+
+    if ($isLetter) {
+        $signOff = $response['sign_off'] ?? '';
+        if (is_string($signOff) && trim($signOff) !== '') {
+            $markdown[] = markdownText($signOff);
+            $markdown[] = '';
+        }
+    }
+
+    $wordCount = $response['word_count'] ?? null;
+    if (is_int($wordCount) || (is_string($wordCount) && trim($wordCount) !== '')) {
+        $markdown[] = '**Word count:** ' . markdownText((string) $wordCount);
+        $markdown[] = '';
+    }
+
+    $writingNotes = is_array($entry['writing_notes'] ?? null) ? $entry['writing_notes'] : [];
+    if ($writingNotes !== []) {
+        $markdown[] = '## Writing notes';
+        $markdown[] = '';
+        foreach ($writingNotes as $note) {
+            if (!is_array($note)) {
+                continue;
+            }
+            $point = $note['point'] ?? '';
+            $explanation = $note['explanation'] ?? '';
+            if (!is_string($point) || trim($point) === '') {
+                continue;
+            }
+            $line = '- **' . markdownText($point) . '**';
+            if (is_string($explanation) && trim($explanation) !== '') {
+                $line .= ': ' . markdownText($explanation);
+            }
+            $markdown[] = $line;
+        }
+        $markdown[] = '';
+    }
+
+    $keyLanguage = is_array($entry['key_language'] ?? null) ? $entry['key_language'] : [];
+    if ($keyLanguage !== []) {
+        $markdown[] = '## Key language';
+        $markdown[] = '';
+        foreach ($keyLanguage as $item) {
+            if (!is_array($item)) {
+                continue;
+            }
+            $expression = $item['expression'] ?? '';
+            $meaning = $item['meaning_or_function'] ?? '';
+            if (!is_string($expression) || trim($expression) === '') {
+                continue;
+            }
+            $line = '- **' . markdownText($expression) . '**';
+            if (is_string($meaning) && trim($meaning) !== '') {
+                $line .= ' — ' . markdownText($meaning);
+            }
+            $markdown[] = $line;
+        }
+        $markdown[] = '';
+    }
+
+    appendList($markdown, 'Related materials', $entry['related'] ?? []);
+    appendList($markdown, 'Notes', $entry['notes'] ?? []);
 
     return rtrim(implode("\n", $markdown)) . "\n";
 }
@@ -540,16 +665,20 @@ foreach ($collections as $collectionKey => $collection) {
         $outputPath = $outputDirectory . '/' . $slug . '.md';
         $expectedFilesByOutput[$outputDirectory][] = $outputPath;
 
-        $content = $collection['type'] === 'reading'
-            ? renderReading($entry, $generatedMarker)
-            : renderEntry($entry, $collection['type'], $termKey, $generatedMarker);
+        if ($collection['type'] === 'reading') {
+            $content = renderReading($entry, $generatedMarker);
+        } elseif (in_array($collection['type'], ['essay', 'letter'], true)) {
+            $content = renderWriting($entry, $generatedMarker, $collection['type']);
+        } else {
+            $content = renderEntry($entry, $collection['type'], $termKey, $generatedMarker);
+        }
 
         if (!writeIfChanged($outputPath, $content)) {
             fwrite(STDERR, "Could not write dictionary page: {$outputPath}\n");
             exit(1);
         }
 
-        if ($collection['type'] !== 'reading') {
+        if (!in_array($collection['type'], ['reading', 'essay', 'letter'], true)) {
             $allEntries[] = [
                 'label' => $collection['label'],
                 'term' => $entry[$termKey],
@@ -619,11 +748,13 @@ if (!writeIfChanged($indexFile, $indexContent)) {
 }
 
 printf(
-    "Rendered %d word(s), %d phrasal verb(s), %d collocation(s), %d idiom(s), and %d reading(s); updated %s\n",
+    "Rendered %d word(s), %d phrasal verb(s), %d collocation(s), %d idiom(s), %d reading(s), %d essay(s), and %d letter(s); updated %s\n",
     $renderedCounts['words'],
     $renderedCounts['phrasal_verbs'],
     $renderedCounts['collocations'],
     $renderedCounts['idioms'],
     $renderedCounts['readings'],
+    $renderedCounts['essays'],
+    $renderedCounts['letters'],
     $indexFile
 );
