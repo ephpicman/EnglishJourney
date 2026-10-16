@@ -68,6 +68,13 @@ $collections = [
         'term_key' => 'title',
         'type' => 'letter',
     ],
+    'monologues' => [
+        'label' => 'Monologue',
+        'source' => $root . '/data/monologues',
+        'output' => $root . '/monologues',
+        'term_key' => 'title',
+        'type' => 'monologue',
+    ],
 ];
 
 /**
@@ -160,6 +167,72 @@ function renderReading(array $reading, string $generatedMarker): string
     appendList($markdown, 'Related materials', $reading['related'] ?? []);
     appendList($markdown, 'Notes', $reading['notes'] ?? []);
 
+    return rtrim(implode("\n", $markdown)) . "\n";
+}
+
+/**
+ * Render a single-speaker monologue as a Markdown page.
+ */
+function renderMonologue(array $entry, string $generatedMarker): string
+{
+    $context = is_array($entry['context'] ?? null) ? $entry['context'] : [];
+    $speaker = is_array($entry['speaker'] ?? null) ? $entry['speaker'] : [];
+    $markdown = ['# ' . markdownText($entry['title']), '', $generatedMarker, ''];
+
+    $tags = is_array($entry['tags'] ?? null) ? $entry['tags'] : [];
+    if ($tags !== []) {
+        $markdown[] = '**Tags:** ' . implode(', ', array_map(
+            static fn (mixed $tag): string => is_string($tag) ? markdownText($tag) : '',
+            $tags
+        ));
+        $markdown[] = '';
+    }
+
+    foreach (['situation' => 'Situation', 'purpose' => 'Purpose', 'audience' => 'Audience'] as $key => $label) {
+        $value = $context[$key] ?? '';
+        if (is_string($value) && trim($value) !== '') {
+            $markdown[] = '**' . $label . ':** ' . markdownText($value);
+            $markdown[] = '';
+        }
+    }
+
+    $speakerName = $speaker['name'] ?? '';
+    if (is_string($speakerName) && trim($speakerName) !== '') {
+        $markdown[] = '**Speaker:** ' . markdownText($speakerName);
+        $markdown[] = '';
+    }
+
+    $markdown[] = '## Monologue';
+    $markdown[] = '';
+    $sentenceDetails = [];
+    $sentenceNumber = 0;
+    foreach (($entry['sentences'] ?? []) as $sentence) {
+        if (!is_array($sentence) || !is_string($sentence['text'] ?? null) || trim($sentence['text']) === '') {
+            continue;
+        }
+        $sentenceNumber++;
+        $markdown[] = trim($sentence['text']);
+        $markdown[] = '';
+        $pronunciation = $sentence['pronunciation']['uk'] ?? '';
+        if (is_string($pronunciation) && trim($pronunciation) !== '') {
+            $sentenceDetails[] = '- **UK pronunciation (sentence ' . $sentenceNumber . '):** ' . markdownText($pronunciation);
+        }
+        foreach (is_array($sentence['notes'] ?? null) ? $sentence['notes'] : [] as $note) {
+            if (is_string($note) && trim($note) !== '') {
+                $sentenceDetails[] = '- **Sentence ' . $sentenceNumber . ':** ' . markdownText($note);
+            }
+        }
+    }
+
+    if ($sentenceDetails !== []) {
+        $markdown[] = '## Sentence notes';
+        $markdown[] = '';
+        $markdown = array_merge($markdown, $sentenceDetails);
+        $markdown[] = '';
+    }
+
+    appendList($markdown, 'Related materials', $entry['related'] ?? []);
+    appendList($markdown, 'Notes', $entry['notes'] ?? []);
     return rtrim(implode("\n", $markdown)) . "\n";
 }
 
@@ -667,6 +740,8 @@ foreach ($collections as $collectionKey => $collection) {
 
         if ($collection['type'] === 'reading') {
             $content = renderReading($entry, $generatedMarker);
+        } elseif ($collection['type'] === 'monologue') {
+            $content = renderMonologue($entry, $generatedMarker);
         } elseif (in_array($collection['type'], ['essay', 'letter'], true)) {
             $content = renderWriting($entry, $generatedMarker, $collection['type']);
         } else {
@@ -678,7 +753,7 @@ foreach ($collections as $collectionKey => $collection) {
             exit(1);
         }
 
-        if (!in_array($collection['type'], ['reading', 'essay', 'letter'], true)) {
+        if (!in_array($collection['type'], ['reading', 'essay', 'letter', 'monologue'], true)) {
             $allEntries[] = [
                 'label' => $collection['label'],
                 'term' => $entry[$termKey],
@@ -748,7 +823,7 @@ if (!writeIfChanged($indexFile, $indexContent)) {
 }
 
 printf(
-    "Rendered %d word(s), %d phrasal verb(s), %d collocation(s), %d idiom(s), %d reading(s), %d essay(s), and %d letter(s); updated %s\n",
+    "Rendered %d word(s), %d phrasal verb(s), %d collocation(s), %d idiom(s), %d reading(s), %d essay(s), %d letter(s), and %d monologue(s); updated %s\n",
     $renderedCounts['words'],
     $renderedCounts['phrasal_verbs'],
     $renderedCounts['collocations'],
@@ -756,5 +831,6 @@ printf(
     $renderedCounts['readings'],
     $renderedCounts['essays'],
     $renderedCounts['letters'],
+    $renderedCounts['monologues'],
     $indexFile
 );
