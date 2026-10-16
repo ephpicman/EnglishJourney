@@ -34,14 +34,14 @@ This file is a machine-readable index of material recorded in this repository. U
 
 - close family
 - extended family
+- family-friendly
 - family business
 - family car
 - family dinner
 - family holiday
+- family home
 - family life
 - family member
-- family-friendly
-- family home
 - language family
 - large family
 - product family
