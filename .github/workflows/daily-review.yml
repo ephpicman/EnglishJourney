@@ -1,0 +1,85 @@
+name: Daily review
+
+on:
+  workflow_dispatch:
+  schedule:
+    # 07:00 Iran time (UTC+03:30) every day.
+    - cron: '30 3 * * *'
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  create-review:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          coverage: none
+
+      - name: Skip if a daily review issue is already open
+        id: existing-review
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          open_reviews="$(gh issue list --state open --label daily-review --limit 1 --json number --jq 'length')"
+          if [ "$open_reviews" -gt 0 ]; then
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            echo "An open daily-review issue already exists; skipping."
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Select review items and update registry
+        if: steps.existing-review.outputs.skip == 'false'
+        run: php scripts/review.php > "$RUNNER_TEMP/review-items.json"
+
+      - name: Commit newly registered materials
+        if: steps.existing-review.outputs.skip == 'false'
+        run: |
+          git add -- data/materials.json
+          if git diff --cached --quiet; then
+            echo "The materials registry is already up to date."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Register review materials"
+          git push
+
+      - name: Create daily review issue
+        if: steps.existing-review.outputs.skip == 'false'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REVIEW_ITEMS_FILE: ${{ runner.temp }}/review-items.json
+        run: |
+          item_count="$(jq 'length' "$REVIEW_ITEMS_FILE")"
+          if [ "$item_count" -eq 0 ]; then
+            echo "No Markdown materials were found; no issue will be created."
+            exit 0
+          fi
+
+          review_date="$(TZ=Asia/Tehran date +'%Y-%m-%d')"
+          title="review $review_date"
+
+          {
+            echo "Review the Markdown materials listed below."
+            echo
+            echo "The `review-path` comments are stable identifiers for a future workflow that updates the review timestamps when this issue is closed."
+            echo
+            echo "<!-- review-items:start -->"
+            jq -r --arg repo "$GITHUB_REPOSITORY" '.[] | "- [ ] [(.path)](https://github.com/\($repo)/blob/main/\(.path)) <!-- review-path: \(.path) -->"' "$REVIEW_ITEMS_FILE"
+            echo "<!-- review-items:end -->"
+          } > "$RUNNER_TEMP/review-body.md"
+
+          gh issue create \
+            --title "$title" \
+            --body-file "$RUNNER_TEMP/review-body.md" \
+            --label "daily-review"
