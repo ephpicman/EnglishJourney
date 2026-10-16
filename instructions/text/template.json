@@ -1,18 +1,21 @@
 {
   "type": "reading",
-  "title": "",
-  "tags": [],
+  "title": "[Concise reading title]",
+  "tags": [
+    "[topic tag]",
+    "[language-focus tag]"
+  ],
   "context": {
-    "topic": "",
-    "purpose": ""
+    "topic": "[Specific situation or subject]",
+    "purpose": "[Learning purpose and relevant knowledge to reinforce]"
   },
   "paragraphs": [
     {
       "sentences": [
         {
-          "text": "",
+          "text": "[Complete sentence from the reading]",
           "pronunciation": {
-            "uk": ""
+            "uk": "[Reliable UK IPA transcription, or empty string]"
           },
           "notes": []
         }
