@@ -4,8 +4,6 @@
 
 This file is a machine-readable index of material recorded in this repository. Use it to understand what has been studied when generating personalised reading texts. It records repository entries; it does not prove that every item is mastered or can be recalled without help.
 
-**Last generated (Asia/Tehran):** 2026-10-16T20:00:00+03:30
-
 ## Inventory
 
 - Words: 1
