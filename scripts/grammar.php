@@ -251,7 +251,13 @@ function renderEntry(array $entry, string $generatedMarker): string
     $lines[] = '';
 
     foreach ($entry['usage'] as $usage) {
-        appendText($lines, 'Use', $usage['description'] ?? '', 3);
+        $description = textValue($usage['description'] ?? '');
+
+        if ($description !== '') {
+            $lines[] = '### ' . $description;
+            $lines[] = '';
+        }
+
         appendExamples($lines, $usage['examples'] ?? []);
         appendNotes($lines, $usage['notes'] ?? []);
     }
