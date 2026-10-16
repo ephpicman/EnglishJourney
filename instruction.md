@@ -93,7 +93,14 @@ For each extracted phrase, determine which of these entry types are genuinely ap
 
 Do not ask the requester to choose a type. Make the linguistic classification yourself based on established usage, not just the number of words.
 
-A phrase may belong to more than one type. Evaluate all four types independently. If a phrase genuinely qualifies as multiple types, create a separate JSON file for every applicable type, in that type's designated directory, using that type's own instruction and template. For example, a phrasal verb may also function in an established idiomatic sense; if both classifications are justified, create both files. Do not force a phrase into a category that is not linguistically supported, and do not omit a valid category merely because another category already applies.
+A phrase may belong to more than one type, but overlapping classifications must represent genuinely distinct, defensible uses or learning value—not duplicate the same sense across files. Evaluate all four types independently, applying these rules:
+
+- **Phrasal verb:** Create a phrasal-verb entry for an established phrasal-verb use, following its own linguistic criteria.
+- **Word (the broad lexical-entry type):** Do not automatically create a Word file just because the input is a phrasal verb or contains multiple words. Create a Word entry when the same expression also has an independently useful lexical sense or use that is not already covered by its phrasal-verb entry. Assess that additional sense under the Word schema, including its appropriate part of speech and grammatical information.
+- **Prepositional verbs:** There is no separate Prepositional Verb entry type or directory. If an expression has a distinct prepositional-verb use or sense in addition to a phrasal-verb use, assess that additional use for a Word entry. Record the accurate grammatical analysis in the existing Word schema; do not create a separate Prepositional Verb file. Do not label a prepositional verb as a phrasal verb merely to fit the available categories.
+- **Idiom and Collocation:** Assess each independently. Create an entry only when the expression meets that type's criteria; do not create one merely because it is multiword or has a figurative meaning.
+
+If multiple types are genuinely applicable, create a separate JSON file for each applicable type, using that type's own instruction and template. Do not duplicate the same sense across Word and Phrasal Verb files simply to increase coverage. Do not force a phrase into an unsupported category or omit a valid, distinct use merely because another category applies.
 
 If a phrase does not defensibly fit any of these four types, do not misclassify it. Explain the issue and ask the user how they want it handled.
 
