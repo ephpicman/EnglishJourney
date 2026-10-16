@@ -1,0 +1,50 @@
+name: Request New Reading
+description: Request a reading text to practise and reinforce studied English.
+title: "[Reading] "
+labels:
+  - request-reading
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Request a reading that reinforces the vocabulary, collocations, phrasal verbs, and grammar recorded in `context.md`.
+        Choose a length and describe the context or subject. Leave optional fields blank if you have no preference.
+  - type: dropdown
+    id: length
+    attributes:
+      label: Length
+      description: Choose the approximate target length.
+      options:
+        - Short (100–200 words)
+        - Medium (300–450 words)
+        - Long (650–850 words)
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context or subject
+      description: What situation or subject should the reading cover? You can also ask for a fresh topic.
+      placeholder: e.g. a family dinner, a workplace conversation, technology, or choose a fresh topic for me
+    validations:
+      required: true
+  - type: dropdown
+    id: focus
+    attributes:
+      label: Learning focus (optional)
+      description: What should the text reinforce most?
+      options:
+        - Balanced use of relevant studied knowledge
+        - Vocabulary and collocations
+        - Grammar
+        - Phrasal verbs
+    validations:
+      required: false
+  - type: textarea
+    id: extra_notes
+    attributes:
+      label: Additional preferences (optional)
+      description: Mention anything else you want the reading to include or avoid.
+      placeholder: Optional
+    validations:
+      required: false
