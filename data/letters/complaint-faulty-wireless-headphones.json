@@ -1,0 +1,55 @@
+{
+  "type": "letter",
+  "title": "Complaint About Faulty Wireless Headphones",
+  "task": {
+    "prompt": "You recently bought a piece of electronic equipment from a local shop, but it has not been working properly.\n\nWrite a letter to the shop manager. In your letter:\n\n- describe the equipment you bought and the problem you have experienced\n- explain what you have done to try to solve the problem\n- say what you would like the manager to do about the situation",
+    "tone": "Formal"
+  },
+  "response": {
+    "salutation": "Dear Shop Manager,",
+    "paragraphs": [
+      "I am writing about the wireless headphones I purchased from your shop on 8 October. They worked normally for the first two days, but they now switch off after a few minutes, even when the battery indicator shows that they are fully charged.",
+      "To rule out a charging problem, I tried a different USB cable and adapter and left the headphones charging overnight. I also followed the reset instructions in the user manual. Unfortunately, none of these steps has solved the issue, and the headphones are still unusable.",
+      "As the product is almost new, I would appreciate it if you could arrange a replacement or provide a full refund. I can bring the headphones and the receipt to the shop at a time that is convenient for your team. Please let me know whether you need any further information before I visit.",
+      "Thank you for your attention to this matter. I look forward to your reply."
+    ],
+    "sign_off": "Yours faithfully,\nAlex",
+    "word_count": 156
+  },
+  "writing_notes": [
+    {
+      "point": "Use a formal, consistent register.",
+      "explanation": "The letter addresses a shop manager, explains the issue neutrally and uses polite requests rather than emotional or accusatory language."
+    },
+    {
+      "point": "Cover the three bullet points in sequence.",
+      "explanation": "The first paragraph describes the headphones and fault; the second explains troubleshooting; the third requests a replacement or refund."
+    },
+    {
+      "point": "Make the requested outcome actionable.",
+      "explanation": "Offering to bring the product and receipt gives the manager a practical next step."
+    }
+  ],
+  "key_language": [
+    {
+      "expression": "To rule out a charging problem",
+      "meaning_or_function": "Introduces a troubleshooting step taken to check whether a possible cause explains the fault."
+    },
+    {
+      "expression": "none of these steps has solved the issue",
+      "meaning_or_function": "Summarises unsuccessful attempts to fix a problem in a clear, formal way."
+    },
+    {
+      "expression": "I would appreciate it if you could arrange",
+      "meaning_or_function": "A polite and appropriately formal way to request action."
+    },
+    {
+      "expression": "at a time that is convenient for your team",
+      "meaning_or_function": "Shows consideration for the recipient's availability."
+    }
+  ],
+  "related": [],
+  "notes": [
+    "The word count is 156 words for the letter body paragraphs only; the salutation and sign-off are excluded."
+  ]
+}
