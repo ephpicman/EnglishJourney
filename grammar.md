@@ -6,4 +6,4 @@ Automatically generated from the JSON grammar entries in data/grammar/.
 
 ## Questions, Negation and Responses
 
-- [The Main Verb ‘Be’: Present, Past and Future Forms](grammar/be-main-verb.md)
+- [The Main Verb ‘Be’: Present, Past and Future Forms](be-main-verb.md)
