@@ -27,7 +27,7 @@ jobs:
 
       - name: Commit generated files only when changed
         run: |
-          git add -A -- grammar grammar.md
+          git add -A -- grammar
 
           if git diff --cached --quiet; then
             echo "Grammar pages and index are already up to date."
