@@ -1,0 +1,42 @@
+name: Request IELTS Essay
+description: Submit an IELTS General Training Writing Task 2 question for a model answer.
+title: "[Essay] "
+labels:
+  - request-essay
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Paste the complete IELTS Writing Task 2 prompt, including all instructions and bullet points.
+        The response will be written in natural, precise British English at a high IELTS Band 9 standard, with notes explaining useful language and writing decisions.
+  - type: textarea
+    id: question
+    attributes:
+      label: Essay question
+      description: Paste the exact task prompt as given.
+      placeholder: "Some people believe... To what extent do you agree or disagree?"
+    validations:
+      required: true
+  - type: dropdown
+    id: essay_type
+    attributes:
+      label: Essay question type (optional)
+      description: Select the type if you know it; otherwise leave the default.
+      options:
+        - Not sure
+        - Opinion / agree or disagree
+        - Discuss both views
+        - Advantages and disadvantages
+        - Problems and solutions
+        - Two-part question
+        - Other
+    validations:
+      required: false
+  - type: textarea
+    id: preferences
+    attributes:
+      label: Additional preferences (optional)
+      description: Any constraints or learning goals. Leave blank if you want the standard model answer.
+      placeholder: Optional
+    validations:
+      required: false
