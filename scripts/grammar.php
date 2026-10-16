@@ -432,7 +432,7 @@ try {
         $index[] = '';
 
         foreach ($categoryEntries as $item) {
-            $relative = basename($item['output']);
+            $relative = 'grammar/' . basename($item['output']);
             $url = implode('/', array_map('rawurlencode', explode('/', $relative)));
             $title = str_replace(['\\', '[', ']'], ['\\\\', '\\[', '\\]'], $item['title']);
             $index[] = '- [' . $title . '](' . $url . ')';
