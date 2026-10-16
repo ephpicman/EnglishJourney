@@ -14,9 +14,18 @@ When an issue in `ephpicman/EnglishJourney` has the `request-reading` label, tre
 8. In the issue, report the created file path with a link and briefly state the chosen topic and how it reinforces the user's recorded knowledge. Do not claim validation or repository changes unless they actually succeeded.
 9. Do not create a separate recent-knowledge database, update `context.md` manually, or add extra tracking systems for reading history. The existing context and repository contents are the sources of truth.
 
+## Requests labelled `request-essay`
+
+Follow `instructions/essay/instruction.md` and `instructions/essay/template.json`. Preserve the submitted IELTS Writing Task 2 prompt exactly, write a complete, original model essay in natural British English targeting high-band quality, include concise writing notes and explanations of useful language, validate the JSON and actual word count, and save a new file under `data/essays/`. Check existing essay JSONs to avoid duplicate prompts. Comment with the file link and actual word count; close only after successful creation and validation. Never promise or assert an official Band 9 score.
+
+## Requests labelled `request-letter`
+
+Follow `instructions/letter/instruction.md` and `instructions/letter/template.json`. Preserve the submitted IELTS General Training Writing Task 1 prompt exactly, write a complete model letter in natural British English with an appropriate register, include concise writing notes and explanations of useful language, validate the JSON and actual word count, and save a new file under `data/letters/`. Check existing letter JSONs to avoid duplicate prompts. Comment with the file link, actual word count, and selected tone; close only after successful creation and validation. Never promise or assert an official Band 9 score.
+
 ## General rules
 
-- An issue with another label does not trigger this workflow.
-- If the user explicitly asks for a different output format, follow that request rather than silently forcing JSON.
-- Do not add quiz questions unless the issue asks for them.
-- Keep the reading focused on language reinforcement, not on producing content for its own sake.
+- Process only the request type identified by the matching label. An issue with another label does not trigger these instructions.
+- If an essential part of a prompt is missing, ask for clarification instead of inventing it.
+- Do not claim a file was created, validated, or committed unless the operation actually succeeded.
+- Do not add quizzes or unrelated tracking systems unless explicitly requested.
+- Keep learning notes concise and useful; the main deliverable is the requested model answer.
