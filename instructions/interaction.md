@@ -37,6 +37,21 @@ When an issue in `ephpicman/EnglishJourney` has the `request-monologue` label, c
 6. Save the entry as a new, descriptive lowercase kebab-case JSON filename under `data/monologues/`. Do not overwrite an existing entry. Validate JSON syntax and required structure before committing.
 7. Comment on the issue with the created file link and a short description of the monologue. Close the issue only after the file has actually been created and validated. Never claim a change or validation that did not happen.
 
+## Requests labelled `request-conversation`
+
+When an issue in `ephpicman/EnglishJourney` has the `request-conversation` label, create one conversation JSON entry.
+
+1. Read the issue title and body. Extract the requested topic and selected context. The context must be one of:
+   - `ielts-listening-part-2` — everyday life and social situations.
+   - `ielts-listening-part-4` — academic or educational subjects.
+   - `professional` — professional communication specifically related to PHP programming, web development, software engineering, or the wider IT field.
+2. If the topic or context is missing, invalid, or ambiguous, ask for clarification in the issue rather than guessing. For `professional`, do not generate generic business content unrelated to PHP, web development, software engineering, or IT.
+3. Read `context.md`, `instructions/conversation/instruction.md`, and `instructions/conversation/template.json`. Check existing JSON files in `data/conversations/` to avoid near-duplicate scenarios and exchanges.
+4. Write one natural, plausible exchange between at least two speakers. Each turn must respond appropriately to the preceding conversation, and every `speaker_id` must match exactly one declared speaker ID. Match vocabulary, detail, and situation to the selected context. For professional topics, keep the content technically credible and within PHP/web/IT.
+5. Set `type` to `conversation`. Include the selected context value as a tag and add useful topic tags. Fill `context.situation`, `context.purpose`, `context.speakers`, `dialogue`, and relevant notes. Use stable unique speaker IDs. Add UK pronunciation aids only when reliable.
+6. Save the entry as a new, descriptive lowercase kebab-case JSON filename under `data/conversations/`. Do not overwrite an existing entry. Validate JSON syntax, required fields, speaker IDs, and dialogue structure before committing.
+7. Comment on the issue with the created file link and a short description of the conversation. Close the issue only after the file has actually been created and validated. Never claim a change or validation that did not happen.
+
 ## General rules
 
 - Process only the request type identified by the matching label. An issue with another label does not trigger these instructions.
