@@ -1,0 +1,39 @@
+name: Request IELTS Letter
+description: Submit an IELTS General Training Writing Task 1 question for a model letter.
+title: "[Letter] "
+labels:
+  - request-letter
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Paste the complete IELTS General Training Writing Task 1 prompt, including the situation and all bullet points.
+        The response will use an appropriate formal, semi-formal, or informal tone and include notes explaining key writing choices.
+  - type: textarea
+    id: question
+    attributes:
+      label: Letter question
+      description: Paste the exact task prompt as given.
+      placeholder: "You recently... Write a letter to..."
+    validations:
+      required: true
+  - type: dropdown
+    id: letter_type
+    attributes:
+      label: Letter tone (optional)
+      description: Choose the tone if you know it; otherwise select Not sure.
+      options:
+        - Not sure
+        - Formal
+        - Semi-formal
+        - Informal
+    validations:
+      required: false
+  - type: textarea
+    id: preferences
+    attributes:
+      label: Additional preferences (optional)
+      description: Any constraints or learning goals. Leave blank if you want the standard model answer.
+      placeholder: Optional
+    validations:
+      required: false
