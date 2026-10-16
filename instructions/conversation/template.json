@@ -4,18 +4,21 @@
   "tags": [],
   "context": {
     "situation": "",
+    "purpose": "",
     "speakers": [
       {
-        "name": "",
-        "age": null,
-        "gender": ""
+        "id": "speaker_1",
+        "name": ""
+      },
+      {
+        "id": "speaker_2",
+        "name": ""
       }
-    ],
-    "purpose": ""
+    ]
   },
   "dialogue": [
     {
-      "speaker": "",
+      "speaker_id": "speaker_1",
       "text": "",
       "pronunciation": {
         "uk": ""
