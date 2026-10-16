@@ -22,6 +22,21 @@ Follow `instructions/essay/instruction.md` and `instructions/essay/template.json
 
 Follow `instructions/letter/instruction.md` and `instructions/letter/template.json`. Preserve the submitted IELTS General Training Writing Task 1 prompt exactly, write a complete model letter in natural British English with an appropriate register, include concise writing notes and explanations of useful language, validate the JSON and actual word count, and save a new file under `data/letters/`. Check existing letter JSONs to avoid duplicate prompts. Comment with the file link, actual word count, and selected tone; close only after successful creation and validation. Never promise or assert an official Band 9 score.
 
+## Requests labelled `request-monologue`
+
+When an issue in `ephpicman/EnglishJourney` has the `request-monologue` label, create one monologue JSON entry.
+
+1. Read the issue title and body. Extract the requested topic and selected context. The context must be one of:
+   - `ielts-listening-part-2` — everyday life and social situations.
+   - `ielts-listening-part-4` — academic or educational subjects.
+   - `professional` — professional communication specifically related to PHP programming, web development, software engineering, or the wider IT field.
+2. If the topic or context is missing, invalid, or ambiguous, ask for clarification in the issue rather than guessing. For `professional`, do not generate generic business content unrelated to PHP, web development, software engineering, or IT.
+3. Read `context.md` and `instructions/monologue/instruction.md`, then follow `instructions/monologue/template.json` exactly. Check existing JSON files in `data/monologues/` to avoid near-duplicate topics and speeches.
+4. Write one coherent, natural spoken monologue by a single speaker, split into sentence-level items. Match vocabulary, detail, and situation to the selected context. For the professional context, use technically credible PHP/web/IT content and do not invent technical claims.
+5. Set `type` to `monologue`. Include the selected context value as a tag and add useful topic tags. Fill `context.situation`, `context.purpose`, `context.audience`, `speaker.name`, `sentences`, and relevant notes. Add UK pronunciation aids only when reliable.
+6. Save the entry as a new, descriptive lowercase kebab-case JSON filename under `data/monologues/`. Do not overwrite an existing entry. Validate JSON syntax and required structure before committing.
+7. Comment on the issue with the created file link and a short description of the monologue. Close the issue only after the file has actually been created and validated. Never claim a change or validation that did not happen.
+
 ## General rules
 
 - Process only the request type identified by the matching label. An issue with another label does not trigger these instructions.
