@@ -1,0 +1,455 @@
+{
+  "type": "grammar",
+  "title": "The Main Verb ‘Be’: Present, Past and Future Forms",
+  "tags": [
+    "main verb be",
+    "present simple",
+    "past simple",
+    "future reference",
+    "negation",
+    "questions",
+    "negative questions",
+    "short answers"
+  ],
+  "explanation": [
+    {
+      "heading": "1. Main-verb ‘be’ versus auxiliary ‘be’",
+      "text": "When be is the main verb, it links the subject to a complement that identifies, describes or locates the subject, or states a condition. In ‘Maya is tired’, is is the main verb. Unlike most lexical verbs, main-verb be forms negatives and questions without do-support: ‘Maya isn't tired’ and ‘Is Maya tired?’ Auxiliary be, by contrast, helps form progressive or passive constructions, as in ‘Maya is working’ and ‘The room was cleaned’.",
+      "notes": [
+        "This entry focuses on be as the main verb. In future forms, will is an auxiliary, while be remains the main verb."
+      ]
+    },
+    {
+      "heading": "2. Present forms: am, is and are",
+      "text": "In the present simple, the form depends on the subject: I am; he, she, it and singular noun phrases take is; you, we, they and plural noun phrases take are. These forms are used for present identity, description, location and state. Negation places not immediately after the form of be, and questions invert be and the subject.",
+      "notes": [
+        "The contracted negatives are I'm not, isn't and aren't. Standard English does not normally use *amn’t; ‘aren't I?’ is the usual tag-question form, while a full negative question is ‘Am I not…?’ or informal ‘Aren't I…?’ depending on context."
+      ]
+    },
+    {
+      "heading": "3. Past forms: was and were",
+      "text": "The past simple uses was with I, he, she, it and singular noun phrases, and were with you, we, they and plural noun phrases. Negative forms place not after was or were; questions place was or were before the subject. These forms refer to past identity, condition, location or other states.",
+      "notes": [
+        "The contracted negatives are wasn’t and weren’t. In hypothetical and subjunctive constructions, were can also occur with singular subjects, as in ‘If I were you’; that is a separate use from ordinary past-time agreement."
+      ]
+    },
+    {
+      "heading": "4. Future reference with ‘will be’",
+      "text": "To refer to a future state, identity, condition or location, use will + subject + be as appropriate to the clause: ‘They will be ready.’ The negative is will not be, commonly won’t be. In questions, will precedes the subject: ‘Will they be ready?’ In this construction, will is the auxiliary and be is the main verb; do-support is not used.",
+      "notes": [
+        "Be does not inflect for the subject after will: ‘I will be’, ‘she will be’ and ‘they will be’. Other future expressions, such as be going to be, are possible but are not required for the core pattern."
+      ]
+    },
+    {
+      "heading": "5. Negative questions and their meanings",
+      "text": "A negative question combines the negative form with interrogative word order: ‘Isn’t he at home?’, ‘Weren’t they invited?’ or ‘Won’t it be difficult?’ Such questions can express an expectation, surprise, a request for confirmation or a suggestion. The speaker’s intended stance depends on context and intonation; a negative question is not simply a neutral question with an extra word.",
+      "notes": [
+        "Full forms such as ‘Is he not ready?’ are grammatical and can sound more formal, emphatic or contrastive than contracted forms. ‘Am I not…?’ is the standard full form with I."
+      ]
+    },
+    {
+      "heading": "6. Short answers and agreement",
+      "text": "Short answers normally repeat the relevant form of be or the auxiliary will, rather than the complement: ‘Yes, she is’; ‘No, they weren’t’; ‘Yes, he will’; ‘No, I won’t’. In standard short answers, affirmative answers do not usually contract the verb, while negative answers commonly use contractions in informal speech.",
+      "notes": [
+        "Answer according to the factual polarity of the proposition, not mechanically according to the positive or negative wording of the question. For example, ‘Isn’t she ready?’ — ‘Yes, she is’ confirms that she is ready."
+      ]
+    }
+  ],
+  "forms": [
+    {
+      "label": "Present simple — affirmative",
+      "structure": "Subject + am/is/are + complement",
+      "examples": [
+        {
+          "text": "I am responsible for the final decision.",
+          "pronunciation": {
+            "uk": "/aɪ əm rɪˈspɒnsəbəl fə ðə ˈfaɪnəl dɪˈsɪʒən/"
+          },
+          "notes": []
+        },
+        {
+          "text": "The results are available online.",
+          "pronunciation": {
+            "uk": "/ðə rɪˈzʌlts ə əˈveɪləbəl ˌɒnˈlaɪn/"
+          },
+          "notes": []
+        }
+      ],
+      "notes": [
+        "Contractions include I’m, he’s, she’s, it’s, we’re and they’re."
+      ]
+    },
+    {
+      "label": "Present simple — negative",
+      "structure": "Subject + am/is/are + not + complement",
+      "examples": [
+        {
+          "text": "She is not available this afternoon.",
+          "pronunciation": {
+            "uk": "/ʃiː ɪz nɒt əˈveɪləbəl ðɪs ˌɑːftəˈnuːn/"
+          },
+          "notes": []
+        },
+        {
+          "text": "We aren't responsible for that decision.",
+          "pronunciation": {
+            "uk": "/wiː ɑːnt rɪˈspɒnsəbəl fə ðæt dɪˈsɪʒən/"
+          },
+          "notes": [
+            "The full form is ‘are not’."
+          ]
+        }
+      ],
+      "notes": [
+        "Use isn’t/aren’t for contracted negatives. With I, the usual contraction is ‘I’m not’."
+      ]
+    },
+    {
+      "label": "Present simple — question",
+      "structure": "Am/Is/Are + subject + complement?",
+      "examples": [
+        {
+          "text": "Are the documents ready for collection?",
+          "pronunciation": {
+            "uk": "/ɑː ðə ˈdɒkjʊmənts ˈredi fə kəˈlekʃən/"
+          },
+          "notes": []
+        },
+        {
+          "text": "Is your brother at university?",
+          "pronunciation": {
+            "uk": "/ɪz jɔː ˈbrʌðər ət ˌjuːnɪˈvɜːsəti/"
+          },
+          "notes": []
+        }
+      ],
+      "notes": [
+        "Invert be and the subject; do not add do or does."
+      ]
+    },
+    {
+      "label": "Present simple — negative question",
+      "structure": "Isn't/Aren't + subject + complement?; Am I not + complement?",
+      "examples": [
+        {
+          "text": "Isn't the meeting supposed to start at nine?",
+          "pronunciation": {
+            "uk": "/ˈɪzənt ðə ˈmiːtɪŋ səˈpəʊzd tə stɑːt ət naɪn/"
+          },
+          "notes": []
+        },
+        {
+          "text": "Am I not on the guest list?",
+          "pronunciation": {
+            "uk": "/əm aɪ nɒt ɒn ðə ɡest lɪst/"
+          },
+          "notes": [
+            "‘Aren't I on the guest list?’ is also common in informal standard English."
+          ]
+        }
+      ],
+      "notes": [
+        "Contracted negative questions are common in conversation; full forms can sound more formal or emphatic."
+      ]
+    },
+    {
+      "label": "Past simple — affirmative and negative",
+      "structure": "Subject + was/were (+ not) + complement",
+      "examples": [
+        {
+          "text": "The office was unusually quiet yesterday.",
+          "pronunciation": {
+            "uk": "/ði ˈɒfɪs wəz ʌnˈjuːʒuəli ˈkwaɪət ˈjestədeɪ/"
+          },
+          "notes": []
+        },
+        {
+          "text": "They weren't satisfied with the explanation.",
+          "pronunciation": {
+            "uk": "/ðeɪ wɜːnt ˈsætɪsfaɪd wɪð ði ˌekspləˈneɪʃən/"
+          },
+          "notes": []
+        }
+      ],
+      "notes": [
+        "Use was with I/he/she/it and singular subjects; use were with you/we/they and plural subjects."
+      ]
+    },
+    {
+      "label": "Past simple — question",
+      "structure": "Was/Were + subject + complement?",
+      "examples": [
+        {
+          "text": "Was the venue easy to find?",
+          "pronunciation": {
+            "uk": "/wəz ðə ˈvenjuː ˈiːzi tə faɪnd/"
+          },
+          "notes": []
+        },
+        {
+          "text": "Were you aware of the changes?",
+          "pronunciation": {
+            "uk": "/wə juː əˈweə əv ðə ˈtʃeɪndʒɪz/"
+          },
+          "notes": []
+        }
+      ],
+      "notes": [
+        "Use inversion rather than did-support when be is the main verb."
+      ]
+    },
+    {
+      "label": "Past simple — negative question",
+      "structure": "Wasn't/Weren't + subject + complement?",
+      "examples": [
+        {
+          "text": "Wasn't he your supervisor last year?",
+          "pronunciation": {
+            "uk": "/ˈwɒzənt hiː jɔː ˈsuːpəvaɪzə lɑːst jɪə/"
+          },
+          "notes": []
+        },
+        {
+          "text": "Weren't they at home when you called?",
+          "pronunciation": {
+            "uk": "/ˈwɜːnt ðeɪ ət həʊm wen juː kɔːld/"
+          },
+          "notes": []
+        }
+      ],
+      "notes": [
+        "Full forms ‘Was he not…?’ and ‘Were they not…?’ are also possible."
+      ]
+    },
+    {
+      "label": "Future reference — affirmative and negative",
+      "structure": "Subject + will (not) + be + complement",
+      "examples": [
+        {
+          "text": "The team will be ready by noon.",
+          "pronunciation": {
+            "uk": "/ðə tiːm wɪl bi ˈredi baɪ nuːn/"
+          },
+          "notes": []
+        },
+        {
+          "text": "I won't be available on Friday.",
+          "pronunciation": {
+            "uk": "/aɪ wəʊnt bi əˈveɪləbəl ɒn ˈfraɪdeɪ/"
+          },
+          "notes": []
+        }
+      ],
+      "notes": [
+        "Will not is commonly contracted to won’t. Be remains unchanged for all subjects."
+      ]
+    },
+    {
+      "label": "Future reference — question and negative question",
+      "structure": "Will + subject + be + complement?; Won't + subject + be + complement?",
+      "examples": [
+        {
+          "text": "Will the road be open tomorrow?",
+          "pronunciation": {
+            "uk": "/wɪl ðə rəʊd bi ˈəʊpən təˈmɒrəʊ/"
+          },
+          "notes": []
+        },
+        {
+          "text": "Won't that be a problem for the client?",
+          "pronunciation": {
+            "uk": "/wəʊnt ðæt bi ə ˈprɒbləm fə ðə ˈklaɪənt/"
+          },
+          "notes": []
+        }
+      ],
+      "notes": [
+        "Will is the auxiliary that moves before the subject; do not use ‘do’ with this construction."
+      ]
+    },
+    {
+      "label": "Short answers",
+      "structure": "Yes, + subject + am/is/are/was/were/will. No, + subject + am/is/are/was/were/will + not (often contracted).",
+      "examples": [
+        {
+          "text": "Yes, she is.",
+          "pronunciation": {
+            "uk": "/jes ʃiː ɪz/"
+          },
+          "notes": []
+        },
+        {
+          "text": "No, they weren't.",
+          "pronunciation": {
+            "uk": "/nəʊ ðeɪ wɜːnt/"
+          },
+          "notes": []
+        },
+        {
+          "text": "Yes, he will.",
+          "pronunciation": {
+            "uk": "/jes hiː wɪl/"
+          },
+          "notes": []
+        }
+      ],
+      "notes": [
+        "The verb form matches the tense and subject of the question."
+      ]
+    }
+  ],
+  "usage": [
+    {
+      "description": "Identify a person or thing, or state a defining role.",
+      "examples": [
+        {
+          "text": "Dr Shah is our new director.",
+          "pronunciation": {
+            "uk": "/ˌdɒktə ˈʃɑː ɪz aʊə njuː dəˈrektə/"
+          },
+          "notes": []
+        }
+      ],
+      "notes": [
+        "This is a linking use of main-verb be, not a progressive construction."
+      ]
+    },
+    {
+      "description": "Describe a quality, condition or temporary state.",
+      "examples": [
+        {
+          "text": "The children are unusually quiet today.",
+          "pronunciation": {
+            "uk": "/ðə ˈtʃɪldrən ə ʌnˈjuːʒuəli ˈkwaɪət təˈdeɪ/"
+          },
+          "notes": []
+        }
+      ],
+      "notes": [
+        "The complement may be an adjective phrase, noun phrase or another suitable complement."
+      ]
+    },
+    {
+      "description": "State a location or situation in the present or past.",
+      "examples": [
+        {
+          "text": "Were your keys on the kitchen table?",
+          "pronunciation": {
+            "uk": "/wə jɔː kiːz ɒn ðə ˈkɪtʃɪn ˈteɪbəl/"
+          },
+          "notes": []
+        }
+      ],
+      "notes": [
+        "The prepositional phrase gives the location; question formation still uses inversion."
+      ]
+    },
+    {
+      "description": "Refer to a future identity, condition, state or location with will be.",
+      "examples": [
+        {
+          "text": "The final figures will be available next week.",
+          "pronunciation": {
+            "uk": "/ðə ˈfaɪnəl ˈfɪɡəz wɪl bi əˈveɪləbəl nekst wiːk/"
+          },
+          "notes": []
+        }
+      ],
+      "notes": [
+        "Will be is one way of expressing future reference, not the only one. Context determines whether it is a prediction, expectation or other future statement."
+      ]
+    },
+    {
+      "description": "Use a negative question to check an expectation, express surprise or invite confirmation.",
+      "examples": [
+        {
+          "text": "Aren't you coming to the presentation?",
+          "pronunciation": {
+            "uk": "/ɑːnt juː ˈkʌmɪŋ tə ðə ˌprezənˈteɪʃən/"
+          },
+          "notes": [
+            "Here coming is a participle in a progressive construction, so this example is not a main-verb-be example."
+          ]
+        },
+        {
+          "text": "Wasn't the restaurant much cheaper last time?",
+          "pronunciation": {
+            "uk": "/ˈwɒzənt ðə ˈrestrɒnt mʌtʃ ˈtʃiːpə lɑːst taɪm/"
+          },
+          "notes": []
+        }
+      ],
+      "notes": [
+        "The first example illustrates the pragmatic function of negative questions but uses auxiliary be; the second illustrates main-verb be directly."
+      ]
+    },
+    {
+      "description": "Give concise answers without repeating the complement.",
+      "examples": [
+        {
+          "text": "‘Are you certain?’ ‘Yes, I am.’",
+          "pronunciation": {
+            "uk": "/ɑː juː ˈsɜːtən | jes aɪ æm/"
+          },
+          "notes": []
+        },
+        {
+          "text": "‘Will she be there?’ ‘No, she won't.’",
+          "pronunciation": {
+            "uk": "/wɪl ʃiː bi ðeə | nəʊ ʃiː wəʊnt/"
+          },
+          "notes": []
+        }
+      ],
+      "notes": [
+        "In speech, short answers are often more natural than repeating the full proposition."
+      ]
+    }
+  ],
+  "common_mistakes": [
+    {
+      "incorrect": "Do you are ready?",
+      "correct": "Are you ready?",
+      "explanation": "When be is the main verb, form a question by placing be before the subject; do-support is not used."
+    },
+    {
+      "incorrect": "She doesn't be available today.",
+      "correct": "She isn't available today.",
+      "explanation": "Negate present-tense main-verb be with not after am/is/are, rather than with don't/doesn't."
+    },
+    {
+      "incorrect": "Did they were at home?",
+      "correct": "Were they at home?",
+      "explanation": "Past-tense main-verb be forms questions by inversion; did is not used."
+    },
+    {
+      "incorrect": "He not was present.",
+      "correct": "He was not present. / He wasn't present.",
+      "explanation": "Place not after the finite form of be."
+    },
+    {
+      "incorrect": "Will be they ready by six?",
+      "correct": "Will they be ready by six?",
+      "explanation": "In a will-question, the order is will + subject + base form be + complement."
+    },
+    {
+      "incorrect": "She will is late.",
+      "correct": "She will be late.",
+      "explanation": "After the modal auxiliary will, use the base form be, not the present-tense form is."
+    },
+    {
+      "incorrect": "Isn't they available?",
+      "correct": "Aren't they available?",
+      "explanation": "The finite form must agree with the subject: they takes are/aren't."
+    },
+    {
+      "incorrect": "‘Isn't he here?’ ‘No, he is.’",
+      "correct": "‘Isn't he here?’ ‘Yes, he is.’ (if he is here)",
+      "explanation": "Choose the short-answer polarity according to whether the proposition is true. A negative question does not reverse the meaning of yes and no."
+    }
+  ],
+  "notes": [
+    "The entry covers main-verb be in present and past forms and future reference with will be. Be can also function as an auxiliary in progressive and passive constructions; those constructions are outside the main scope here.",
+    "Negative-question interpretation is sensitive to context and intonation; avoid assuming that every negative question expresses surprise or expects a particular answer."
+  ]
+}
