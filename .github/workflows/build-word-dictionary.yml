@@ -1,4 +1,4 @@
-name: Build dictionary, readings, essays, letters, and monologues
+name: Build dictionary, readings, essays, letters, monologues, and conversations
 
 on:
   workflow_dispatch:
@@ -30,7 +30,7 @@ jobs:
           git add -A
 
           if git diff --cached --quiet; then
-            echo "Generated dictionary, reading, essay, letter, and monologue Markdown files are already up to date."
+            echo "Generated dictionary, reading, essay, letter, monologue, and conversation Markdown files are already up to date."
             exit 0
           fi
 
