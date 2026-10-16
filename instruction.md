@@ -53,7 +53,7 @@ Apply these classification principles:
 ### Create and save the grammar JSON
 
 1. Create one valid JSON object for each clearly requested grammar topic, following `instructions/grammar/template.json` exactly and all content requirements in `instructions/grammar/instruction.md`.
-2. Save the file under the matching category directory using this path pattern: `grammar/<category-alias>/<topic-slug>.json`. Use the exact category aliases listed above and a concise, readable lowercase kebab-case topic slug. Check the repository first to avoid filename collisions.
+2. Save the source JSON file under the matching category directory using this path pattern: `data/grammar/<category-alias>/<topic-slug>.json`. The `data/grammar/` tree contains source JSON; the root-level `grammar/` tree is reserved for generated Markdown pages and the generated `grammar/grammar.md` index. Use the exact category aliases listed above and a concise, readable lowercase kebab-case topic slug. Check the repository first to avoid filename collisions.
 3. Do not add fields beyond the grammar template, and do not overwrite an existing file without first checking its contents and resolving the conflict safely.
 4. Create the JSON file in the repository; do not merely print the JSON in the issue or chat.
 5. Validate the JSON syntax and verify the exact schema against the current grammar template before proceeding.
@@ -64,7 +64,7 @@ Before finishing:
 
 - Confirm the topic and any additional instructions or scope notes were addressed.
 - Confirm exactly one primary category was selected for each entry.
-- Confirm the file is saved in the matching `grammar/<category-alias>/` directory.
+- Confirm the source JSON file is saved in the matching `data/grammar/<category-alias>/` directory. Do not save grammar JSON files under `grammar/`, which is generated-output-only.
 - Validate JSON syntax, exact fields, nesting, and data types.
 - Report the grammar topic, selected category, and repository path created. Mention any ambiguity or blocker that needs the user's input.
 
