@@ -53,7 +53,7 @@ Apply these classification principles:
 ### Create and save the grammar JSON
 
 1. Create one valid JSON object for each clearly requested grammar topic, following `instructions/grammar/template.json` exactly and all content requirements in `instructions/grammar/instruction.md`.
-2. Save the source JSON file under the matching category directory using this path pattern: `data/grammar/<category-alias>/<topic-slug>.json`. The `data/grammar/` tree contains source JSON; the root-level `grammar/` tree is reserved for generated Markdown pages and the generated `grammar/grammar.md` index. Use the exact category aliases listed above and a concise, readable lowercase kebab-case topic slug. Check the repository first to avoid filename collisions.
+2. Save the source JSON file under the matching category directory using this path pattern: `data/grammar/<category-alias>/<topic-slug>.json`. The `data/grammar/` tree contains source JSON; the root-level `grammar/` directory contains only flat, individually generated Markdown pages (no category subdirectories), and the generated grammar index is `grammar.md` in the repository root. Use the exact category aliases listed above and a concise, readable lowercase kebab-case topic slug. Check the repository first to avoid filename collisions.
 3. Do not add fields beyond the grammar template, and do not overwrite an existing file without first checking its contents and resolving the conflict safely.
 4. Create the JSON file in the repository; do not merely print the JSON in the issue or chat.
 5. Validate the JSON syntax and verify the exact schema against the current grammar template before proceeding.
