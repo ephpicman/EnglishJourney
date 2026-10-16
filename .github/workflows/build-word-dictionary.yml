@@ -1,4 +1,4 @@
-name: Build English dictionary
+name: Build dictionary and reading pages
 
 on:
   workflow_dispatch:
@@ -22,19 +22,19 @@ jobs:
           php-version: '8.3'
           coverage: none
 
-      - name: Render all dictionary entries
+      - name: Render dictionary entries and reading texts
         run: php scripts/dictionary.php
 
-      - name: Commit generated dictionary when changed
+      - name: Commit generated Markdown when changed
         run: |
           git add -A
 
           if git diff --cached --quiet; then
-            echo "Generated dictionary files are already up to date."
+            echo "Generated Markdown files are already up to date."
             exit 0
           fi
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Build English dictionary"
+          git commit -m "Build dictionary and reading pages"
           git push
