@@ -1,0 +1,54 @@
+{
+  "type": "essay",
+  "title": "Working from Home or in an Office",
+  "task": {
+    "prompt": "Some people believe that employees should be allowed to work from home whenever their job permits it, while others think that working in an office is better for both employees and employers.\n\nDiscuss both views and give your own opinion.",
+    "question_type": "Discuss both views and give your own opinion"
+  },
+  "response": {
+    "paragraphs": [
+      "Whether employees should work from home or in an office depends partly on the nature of their jobs, but I believe that remote work should generally be available when it can be done effectively.",
+      "Those who favour working from home point to the time and money saved by avoiding a daily commute. Employees may also find it easier to concentrate without constant interruptions, while parents and carers can organise their responsibilities more flexibly. For employers, offering remote work can widen the pool of applicants because recruitment is no longer limited to people who live within travelling distance. These benefits can improve job satisfaction and help companies retain skilled staff.",
+      "However, an office can provide advantages that are difficult to reproduce online. New employees often learn by observing experienced colleagues, and quick face-to-face conversations can resolve problems before they become serious. Working together in person may also strengthen relationships and make collaboration easier, particularly when a project requires frequent discussion. In addition, not everyone has a quiet home or reliable equipment, so a remote arrangement can sometimes create inequality rather than improve productivity.",
+      "In my view, neither arrangement should be imposed on every employee. Where tasks require individual concentration and can be measured by results, working from home is a sensible option. Roles involving practical equipment, confidential facilities or intensive in-person training may require regular attendance. Many organisations would therefore benefit from a flexible policy that sets clear expectations and allows teams to meet in person when there is a genuine reason.",
+      "Overall, working from home can save time and offer greater flexibility, whereas offices support learning and direct cooperation. Employers should focus on the requirements of each role and the quality of the work, rather than assuming that one location is always best."
+    ],
+    "word_count": 293
+  },
+  "writing_notes": [
+    {
+      "point": "Present both views before stating a practical position.",
+      "explanation": "The essay explains the benefits of remote work and office-based work, then gives a clear preference for flexibility rather than treating either arrangement as universally best."
+    },
+    {
+      "point": "Develop ideas through cause and effect.",
+      "explanation": "Commuting, recruitment, workplace learning and collaboration are linked to plausible consequences rather than listed without explanation."
+    },
+    {
+      "point": "Use a role-based conclusion.",
+      "explanation": "The recommendation connects work location to job requirements and outcomes, directly answering the question."
+    }
+  ],
+  "key_language": [
+    {
+      "expression": "widen the pool of applicants",
+      "meaning_or_function": "Means to make a job accessible to a larger group of potential candidates."
+    },
+    {
+      "expression": "retain skilled staff",
+      "meaning_or_function": "Means to keep experienced and capable employees in an organisation."
+    },
+    {
+      "expression": "difficult to reproduce online",
+      "meaning_or_function": "A concise way to describe benefits that are hard to achieve through remote communication."
+    },
+    {
+      "expression": "rather than assuming that one location is always best",
+      "meaning_or_function": "Contrasts evidence-based decisions with a rigid, one-size-fits-all policy."
+    }
+  ],
+  "related": [],
+  "notes": [
+    "The response contains 293 words across the essay paragraphs; the copied task and notes are excluded from the count."
+  ]
+}
