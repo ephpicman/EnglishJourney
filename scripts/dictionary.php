@@ -47,7 +47,107 @@ $collections = [
         'term_key' => 'phrase',
         'type' => 'idiom',
     ],
+    'readings' => [
+        'label' => 'Reading',
+        'source' => $root . '/data/readings',
+        'output' => $root . '/readings',
+        'term_key' => 'title',
+        'type' => 'reading',
+    ],
 ];
+
+/**
+ * Render a reading JSON document as a Markdown page.
+ */
+function renderReading(array $reading, string $generatedMarker): string
+{
+    $markdown = [
+        '# ' . markdownText($reading['title']),
+        '',
+        $generatedMarker,
+        '',
+    ];
+
+    $tags = is_array($reading['tags'] ?? null) ? $reading['tags'] : [];
+
+    if ($tags !== []) {
+        $markdown[] = '**Tags:** ' . implode(', ', array_map(
+            static fn (mixed $tag): string => is_string($tag) ? markdownText($tag) : '',
+            $tags
+        ));
+        $markdown[] = '';
+    }
+
+    $context = is_array($reading['context'] ?? null) ? $reading['context'] : [];
+
+    foreach (['topic' => 'Topic', 'purpose' => 'Learning purpose'] as $key => $label) {
+        $value = $context[$key] ?? '';
+
+        if (is_string($value) && trim($value) !== '') {
+            $markdown[] = '**' . $label . ':** ' . markdownText($value);
+            $markdown[] = '';
+        }
+    }
+
+    foreach (($reading['paragraphs'] ?? []) as $paragraph) {
+        if (!is_array($paragraph)) {
+            continue;
+        }
+
+        $sentenceTexts = [];
+        $sentenceDetails = [];
+
+        foreach (($paragraph['sentences'] ?? []) as $sentenceIndex => $sentence) {
+            if (!is_array($sentence) || !is_string($sentence['text'] ?? null)) {
+                continue;
+            }
+
+            $sentenceText = trim($sentence['text']);
+
+            if ($sentenceText === '') {
+                continue;
+            }
+
+            $sentenceTexts[] = $sentenceText;
+            $sentenceNumber = count($sentenceTexts);
+            $pronunciation = $sentence['pronunciation']['uk'] ?? '';
+
+            if (is_string($pronunciation) && trim($pronunciation) !== '') {
+                $sentenceDetails[] = '- **UK pronunciation (sentence ' . $sentenceNumber . '):** ' . markdownText($pronunciation);
+            }
+
+            foreach (is_array($sentence['notes'] ?? null) ? $sentence['notes'] : [] as $note) {
+                if (is_string($note) && trim($note) !== '') {
+                    $sentenceDetails[] = '- **Sentence ' . $sentenceNumber . ':** ' . markdownText($note);
+                }
+            }
+        }
+
+        if ($sentenceTexts !== []) {
+            $markdown[] = implode(' ', $sentenceTexts);
+            $markdown[] = '';
+        }
+
+        if ($sentenceDetails !== []) {
+            $markdown[] = '**Sentence notes:**';
+            $markdown = array_merge($markdown, $sentenceDetails);
+            $markdown[] = '';
+        }
+
+        $paragraphNotes = renderBulletList($paragraph['notes'] ?? []);
+
+        if ($paragraphNotes !== '') {
+            $markdown[] = '**Paragraph notes:**';
+            $markdown[] = $paragraphNotes;
+            $markdown[] = '';
+        }
+    }
+
+    appendList($markdown, 'Related materials', $reading['related'] ?? []);
+    appendList($markdown, 'Notes', $reading['notes'] ?? []);
+
+    return rtrim(implode("\n", $markdown)) . "\n";
+}
 
 /**
  * Write a generated file only when its contents differ.
@@ -440,19 +540,23 @@ foreach ($collections as $collectionKey => $collection) {
         $outputPath = $outputDirectory . '/' . $slug . '.md';
         $expectedFilesByOutput[$outputDirectory][] = $outputPath;
 
-        $content = renderEntry($entry, $collection['type'], $termKey, $generatedMarker);
+        $content = $collection['type'] === 'reading'
+            ? renderReading($entry, $generatedMarker)
+            : renderEntry($entry, $collection['type'], $termKey, $generatedMarker);
 
         if (!writeIfChanged($outputPath, $content)) {
             fwrite(STDERR, "Could not write dictionary page: {$outputPath}\n");
             exit(1);
         }
 
-        $allEntries[] = [
-            'label' => $collection['label'],
-            'term' => $entry[$termKey],
-            'path' => $relativePath,
-            'sort' => strtolower($entry[$termKey]),
-        ];
+        if ($collection['type'] !== 'reading') {
+            $allEntries[] = [
+                'label' => $collection['label'],
+                'term' => $entry[$termKey],
+                'path' => $relativePath,
+                'sort' => strtolower($entry[$termKey]),
+            ];
+        }
         $renderedCounts[$collectionKey]++;
     }
 
@@ -515,10 +619,11 @@ if (!writeIfChanged($indexFile, $indexContent)) {
 }
 
 printf(
-    "Rendered %d word(s), %d phrasal verb(s), %d collocation(s), and %d idiom(s); updated %s\n",
+    "Rendered %d word(s), %d phrasal verb(s), %d collocation(s), %d idiom(s), and %d reading(s); updated %s\n",
     $renderedCounts['words'],
     $renderedCounts['phrasal_verbs'],
     $renderedCounts['collocations'],
     $renderedCounts['idioms'],
+    $renderedCounts['readings'],
     $indexFile
 );
